@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.pelantaq.pos'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.pelantaq.pos"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:5.0.0' // atau versi yang bersesuaian
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Tambah pustaka/SDK Sunmi InnerPrinter (Aidl) di sini jika ada
+    // Pustaka rasmi Sunmi untuk sambungan pencetak terma V3
+    implementation files('libs/sunmiutils.jar') // Bergantung pada cara anda simpan fail SDK
+}
